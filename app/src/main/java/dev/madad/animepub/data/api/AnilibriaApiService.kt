@@ -1,5 +1,6 @@
-package dev.madad.animepub.data.network.api
+package dev.madad.animepub.data.api
 
+import dev.madad.animepub.data.models.Anime
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
@@ -12,8 +13,8 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface AnilibriaApiService {
-    @GET("/v3/title/list")
-    suspend fun getTitleList(): String
+    @GET("/v3/title/updates?filter=id,names,posters&items_per_page=10")
+    suspend fun getAnimeList(): List<Anime>
 }
 
 object AnilibriaApi {
