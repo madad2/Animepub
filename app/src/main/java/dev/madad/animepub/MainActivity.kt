@@ -39,7 +39,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(
     showSystemUi = true,
-    showBackground = true
+    showBackground = true, device = "id:pixel_6"
 )
 @Composable
 fun GreetingPreview() {

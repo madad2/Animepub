@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.converter.scalars)
     // Retrofit with kotlinx serialization converter
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
     // Koin for Android
     implementation(libs.koin.androidx.compose)
     testImplementation(libs.junit)

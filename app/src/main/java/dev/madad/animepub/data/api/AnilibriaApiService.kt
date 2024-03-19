@@ -1,14 +1,17 @@
 package dev.madad.animepub.data.api
 
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dev.madad.animepub.data.models.Anime
+import kotlinx.serialization.json.Json
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL = "https://api.anilibria.tv"
 
+
 private val retrofit = Retrofit.Builder()
-    .addConverterFactory(ScalarsConverterFactory.create())
+    .addConverterFactory(Json.asConverterFactory(contentType = "application/json"..toMediaType()))
     .baseUrl(BASE_URL)
     .build()
 
