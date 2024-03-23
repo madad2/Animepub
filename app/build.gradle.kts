@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlinxSerialization)
+    id("kotlin-kapt")
 }
 
 android {
@@ -67,8 +68,12 @@ dependencies {
     // Retrofit with kotlinx serialization converter
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.okhttp)
     // Koin for Android
     implementation(libs.koin.androidx.compose)
+    // Dagger
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
